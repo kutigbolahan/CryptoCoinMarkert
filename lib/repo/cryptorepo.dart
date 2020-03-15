@@ -17,6 +17,8 @@ class CrytoRepo extends BaseCryptoRepo {
   Future<List<Coin>> getTopCoins({int page})async {
     List<Coin> coins =[];
     String requestUrl = '$_baseUrl/data/top/totalvolfull?limit=$_perpage&tsym=USD&page=$page';
+    //String requestUrl = 'https://min-api.cryptocompare.com/data/top/totalvolfull?limit=20&tsym=USD&page=1';
+   // String requestUrl = 'https://min-api.cryptocompare.com/data/top/totalvolfull?limit=20&tsym=USD';
     try {
       final response = await _httpClient.get(requestUrl);
       if (response.statusCode == 200) {
